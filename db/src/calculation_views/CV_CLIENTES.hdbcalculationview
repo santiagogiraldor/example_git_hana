@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_CLIENTES" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_CLIENTES.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="T_CLIENTES">
+    <resourceUri>T_CLIENTES</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="CODIGO_CLIENTE"/>
+      <viewAttribute id="EMPRESA"/>
+      <viewAttribute id="DIRECCION"/>
+      <viewAttribute id="POBLACION"/>
+      <viewAttribute id="TELEFONO"/>
+      <viewAttribute id="RESPONSABLE"/>
+      <viewAttribute id="HISTORIAL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="RATIO" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="T_CLIENTES"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="CODIGO_CLIENTE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CODIGO_CLIENTE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CODIGO_CLIENTE"/>
+    </attribute>
+    <attribute id="EMPRESA" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMPRESA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="EMPRESA"/>
+    </attribute>
+    <attribute id="DIRECCION" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DIRECCION"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DIRECCION"/>
+    </attribute>
+    <attribute id="POBLACION" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POBLACION"/>
+      <keyMapping columnObjectName="Projection_1" columnName="POBLACION"/>
+    </attribute>
+    <attribute id="TELEFONO" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELEFONO"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TELEFONO"/>
+    </attribute>
+    <attribute id="RESPONSABLE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RESPONSABLE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="RESPONSABLE"/>
+    </attribute>
+    <attribute id="HISTORIAL" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HISTORIAL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="HISTORIAL"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="RATIO" order="1" aggregationType="count" measureType="simple">
+      <descriptions defaultDescription="RATIO"/>
+      <measureMapping columnObjectName="Projection_1" columnName="RATIO"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
